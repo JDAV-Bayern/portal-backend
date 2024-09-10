@@ -10,17 +10,29 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import json
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load secrets from external file
+data_dir_key = 'PORTAL_JDAV_BAYERN_DATA_DIR'
+DATA_DIR = Path(os.environ[data_dir_key]) if data_dir_key in os.environ else BASE_DIR.parent
+
+try:
+    with DATA_DIR.joinpath('secrets.json').open() as handle:
+        SECRETS = json.load(handle)
+except OSError:
+    SECRETS = {}
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-g0&5o46a!3b+1zte-f==w-7-gt)sz9m-weg@t)c##n83g$@e=a'
+SECRET_KEY = str(SECRETS.get('secret_key', 'django-insecure-g05o46a'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,8 +89,12 @@ WSGI_APPLICATION = 'portal_jdav_bayern.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portal_jdav_bayern',
+        'USER': SECRETS.get('db_user', 'portal_jdav_bayern'),
+        'HOST': SECRETS.get('db_host', ''),
+        'PASSWORD': SECRETS.get('db_password', ''),
+        'PORT': SECRETS.get('db_port', ''),
     }
 }
 
