@@ -1,0 +1,30 @@
+{% extends 'admin/base_site.html' %}
+{% load static %}
+
+{% block extrastyle %}{{ block.super }}
+<style>
+html[data-theme="light"], :root {
+  --secondary: #52ae32;
+  --accent: #fff;
+
+  --header-color: #fff;
+  --breadcrumbs-bg: #84929b;
+  --breadcrumbs-fg: #fff;
+
+  --font-family-primary: 'Tahoma';
+}
+#site-name {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.login #container {
+  width: fit-content !important;
+}
+</style>
+{% endblock %}
+
+{% block branding %}
+<img src="{% static 'logo.svg' %}" alt="JDAV Bayern" height="100px">
+{{ block.super }}
+{% endblock %}
