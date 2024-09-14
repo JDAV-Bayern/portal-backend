@@ -25,7 +25,7 @@ class Federation(models.Model):
         verbose_name_plural = _('Federations')
 
 class Section(models.Model):
-    number = models.IntegerField(_('Number'), unique=True)
+    number = models.IntegerField(_('Section Number'), unique=True)
     name = models.CharField(_('Name'), max_length=200)
     state = models.ForeignKey(Federation, on_delete=models.PROTECT, related_name='state_section_set', verbose_name=_('State Federation'))
     district = models.ForeignKey(Federation, on_delete=models.PROTECT, related_name='district_section_set', verbose_name=_('District Federation'), null=True, blank=True)

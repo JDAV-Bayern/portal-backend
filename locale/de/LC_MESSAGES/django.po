@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-12 21:40+0200\n"
+"POT-Creation-Date: 2024-09-14 22:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,74 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: courses/apps.py:8 courses/models.py:46
+msgid "Courses"
+msgstr "Kurse"
+
+#: courses/forms.py:10 courses/models.py:6
+msgid "Year"
+msgstr "Jahr"
+
+#: courses/forms.py:12 courses/models.py:38 sections/models.py:24
+msgid "Federation"
+msgstr "Verband"
+
+#: courses/models.py:13 courses/models.py:37
+msgid "Course Year"
+msgstr "Kursjahr"
+
+#: courses/models.py:14
+msgid "Course Years"
+msgstr "Kursjahre"
+
+#: courses/models.py:24
+msgid "Basic Training"
+msgstr "Grundausbildung"
+
+#: courses/models.py:25
+msgid "Continuing Training"
+msgstr "Fortbildung"
+
+#: courses/models.py:26
+msgid "Advanced Training"
+msgstr "Aufbaumodul"
+
+#: courses/models.py:27
+msgid "Youth Assembly"
+msgstr "Jugendverammlung"
+
+#: courses/models.py:28
+msgid "Special Event"
+msgstr "Sonderveranstaltung"
+
+#: courses/models.py:31
+msgid "Course Number"
+msgstr "Kursnummer"
+
+#: courses/models.py:32 sections/models.py:16 sections/models.py:29
+msgid "Name"
+msgstr "Name"
+
+#: courses/models.py:33
+msgid "Course Type"
+msgstr "Kursart"
+
+#: courses/models.py:34
+msgid "Start Date"
+msgstr "Startdatum"
+
+#: courses/models.py:35
+msgid "End Date"
+msgstr "Enddatum"
+
+#: courses/models.py:36
+msgid "Location"
+msgstr "Ort"
+
+#: courses/models.py:45
+msgid "Course"
+msgstr "Kurs"
 
 #: sections/apps.py:7 sections/models.py:39
 msgid "Sections"
@@ -38,25 +106,17 @@ msgstr "Bezirk"
 msgid "Level"
 msgstr "Ebene"
 
-#: sections/models.py:16 sections/models.py:29
-msgid "Name"
-msgstr "Name"
-
 #: sections/models.py:17
 msgid "Parent"
 msgstr "Übergeordnet"
-
-#: sections/models.py:24
-msgid "Federation"
-msgstr "Verband"
 
 #: sections/models.py:25
 msgid "Federations"
 msgstr "Verbände"
 
 #: sections/models.py:28
-msgid "Number"
-msgstr "Nummer"
+msgid "Section Number"
+msgstr "Sektionsnummer"
 
 #: sections/models.py:38
 msgid "Section"
