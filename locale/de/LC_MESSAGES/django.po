@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-14 22:27+0200\n"
+"POT-Creation-Date: 2024-09-14 22:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,17 +22,17 @@ msgstr ""
 msgid "Courses"
 msgstr "Kurse"
 
-#: courses/forms.py:10 courses/models.py:6
-msgid "Year"
-msgstr "Jahr"
+#: courses/forms.py:10 courses/models.py:13 courses/models.py:37
+msgid "Course Year"
+msgstr "Kursjahr"
 
 #: courses/forms.py:12 courses/models.py:38 sections/models.py:24
 msgid "Federation"
 msgstr "Verband"
 
-#: courses/models.py:13 courses/models.py:37
-msgid "Course Year"
-msgstr "Kursjahr"
+#: courses/models.py:6
+msgid "Year"
+msgstr "Jahr"
 
 #: courses/models.py:14
 msgid "Course Years"
@@ -52,7 +52,7 @@ msgstr "Aufbaumodul"
 
 #: courses/models.py:27
 msgid "Youth Assembly"
-msgstr "Jugendverammlung"
+msgstr "Jugendversammlung"
 
 #: courses/models.py:28
 msgid "Special Event"

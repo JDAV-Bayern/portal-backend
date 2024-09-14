@@ -38,7 +38,7 @@ class Course(models.Model):
     federation = models.ForeignKey('sections.Federation', on_delete=models.PROTECT, verbose_name=_('Federation'))
 
     def __str__(self):
-        return self.number + ' ' + self.name
+        return (self.number + ' ' if self.number else '') + self.name
     
     class Meta:
         ordering = ['federation', 'start_date', 'number']
