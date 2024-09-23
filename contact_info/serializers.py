@@ -25,7 +25,7 @@ class AddressSerializer(serializers.ModelSerializer):
         fields = ['line1', 'line2', 'postal_code', 'locality', 'country']
 
 
-class BankAccountSerializer(serializers.Serializer):
+class BankAccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = BankAccount
         fields = ['iban', 'bic']

@@ -51,7 +51,7 @@ class Address(models.Model):
 class BankAccount(models.Model):
     contact = models.OneToOneField(Contact, on_delete=models.CASCADE, related_name='bank_account', verbose_name=_('Contact'))
     iban = models.CharField(_("IBAN"), max_length=34, unique=True)
-    bic = models.CharField(_("BIC"), max_length=11)
+    bic = models.CharField(_("BIC"), max_length=11, null=True, blank=True)
 
     class Meta:
         verbose_name = _('Bank Account')
