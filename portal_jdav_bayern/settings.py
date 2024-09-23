@@ -51,7 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'import_export',
+    'contact_info',
     'sections',
+    'people',
     'courses',
 ]
 

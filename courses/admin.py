@@ -31,7 +31,6 @@ class CourseAdmin(ImportExportModelAdmin):
     confirm_form_class = CourseConfirmImportForm
 
     def get_confirm_form_initial(self, request, import_form):
-        print("get_confirm_form_initial")
         initial = super().get_confirm_form_initial(request, import_form)
         if import_form:
             initial["year"] = import_form.cleaned_data["year"].id
