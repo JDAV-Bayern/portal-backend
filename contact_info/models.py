@@ -2,12 +2,6 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-class Contact(models.Model):
-    class Meta:
-        verbose_name = _('Contact')
-        verbose_name_plural = _('Contacts')
-
-
 class Country(models.Model):
     name = models.CharField(_('Name'), max_length=255, unique=True)
 
@@ -35,12 +29,12 @@ class Locality(models.Model):
 
 
 class Address(models.Model):
-    contact = models.OneToOneField(Contact, on_delete=models.CASCADE, verbose_name=_('Contact'))
     line1 = models.CharField(_('Line 1'), max_length=255)
     line2 = models.CharField(_('Line 2'), max_length=255, blank=True)
     locality = models.ForeignKey(Locality, on_delete=models.CASCADE, verbose_name=_('Locality'))
 
     class Meta:
+        abstract = True
         verbose_name = _('Address')
         verbose_name_plural = _('Addresses')
 
@@ -49,11 +43,11 @@ class Address(models.Model):
 
 
 class BankAccount(models.Model):
-    contact = models.OneToOneField(Contact, on_delete=models.CASCADE, related_name='bank_account', verbose_name=_('Contact'))
     iban = models.CharField(_("IBAN"), max_length=34, unique=True)
     bic = models.CharField(_("BIC"), max_length=11, null=True, blank=True)
 
     class Meta:
+        abstract = True
         verbose_name = _('Bank Account')
         verbose_name_plural = _('Bank Accounts')
 
