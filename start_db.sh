@@ -1,0 +1,2 @@
+docker volume create --name=postgres_jdav_portal
+docker run --rm -d --name postgres_jdav_portal -e POSTGRES_PASSWORD=jdav_portal -e POSTGRES_USER=jdav_portal -e POSTGRES_DB=portal_jdav_bayern -p 5432:5432 -v postgres_jdav_portal:/var/lib/postgresql/data postgres:17.0
