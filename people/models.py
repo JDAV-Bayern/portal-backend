@@ -19,7 +19,7 @@ class Person(models.Model):
 
 
 class PersonAddress(Address):
-    person = models.OneToOneField(Person, on_delete=models.CASCADE, verbose_name=_('Person'))
+    person = models.OneToOneField(Person, on_delete=models.CASCADE, related_name='address', verbose_name=_('Person'))
 
     class Meta:
         verbose_name = _('Person Address')
@@ -27,7 +27,7 @@ class PersonAddress(Address):
 
 
 class PersonBankAccount(BankAccount):
-    person = models.OneToOneField(Person, on_delete=models.CASCADE, verbose_name=_('Person'))
+    person = models.OneToOneField(Person, on_delete=models.CASCADE, related_name='bank_account', verbose_name=_('Person'))
 
     class Meta:
         verbose_name = _('Person Bank Account')

@@ -43,7 +43,7 @@ class Address(models.Model):
 
 
 class BankAccount(models.Model):
-    iban = models.CharField(_("IBAN"), max_length=34, unique=True)
+    iban = models.CharField(_("IBAN"), max_length=34)
     bic = models.CharField(_("BIC"), max_length=11, null=True, blank=True)
 
     class Meta:

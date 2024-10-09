@@ -16,12 +16,9 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 DOTENV_PATH = Path(__file__).parent.parent / '.env'
-logging.debug(f'Loading environment variables from {DOTENV_PATH}')
 load_dotenv(DOTENV_PATH)
-
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,13 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 data_dir_key = 'PORTAL_JDAV_BAYERN_DATA_DIR'
 DATA_DIR = Path(os.environ[data_dir_key]) if data_dir_key in os.environ else BASE_DIR.parent
 
-logging.debug(f'Loading secrets from {DATA_DIR.joinpath("secrets.json")}')
-
 try:
     with DATA_DIR.joinpath('secrets.json').open() as handle:
         SECRETS = json.load(handle)
 except OSError as e:
-    logging.debug(f'Failed to load secrets: {e}')
+    logging.error(f'Failed to load secrets: {e}')
     SECRETS = {}
 
 
@@ -68,6 +63,7 @@ INSTALLED_APPS = [
     'sections',
     'people',
     'courses',
+    'reimbursements',
 ]
 
 MIDDLEWARE = [

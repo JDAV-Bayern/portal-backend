@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-24 00:17+0200\n"
+"POT-Creation-Date: 2024-10-09 23:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,73 +22,65 @@ msgstr ""
 msgid "Contact Information"
 msgstr "Kontaktdaten"
 
-#: contact_info/forms.py:9 contact_info/models.py:15 contact_info/models.py:25
+#: contact_info/forms.py:9 contact_info/models.py:9 contact_info/models.py:19
 msgid "Country"
 msgstr "Land"
 
-#: contact_info/models.py:7 contact_info/models.py:38 contact_info/models.py:52
-msgid "Contact"
-msgstr "Kontakt"
-
-#: contact_info/models.py:8
-msgid "Contacts"
-msgstr "Kontakte"
-
-#: contact_info/models.py:12 contact_info/models.py:24 courses/models.py:32
-#: reimbursements/models/expenses.py:86 sections/models.py:16
+#: contact_info/models.py:6 contact_info/models.py:18 courses/models.py:32
+#: reimbursements/models/expenses.py:94 sections/models.py:16
 #: sections/models.py:29
 msgid "Name"
 msgstr "Name"
 
-#: contact_info/models.py:16
+#: contact_info/models.py:10
 msgid "Countries"
 msgstr "Länder"
 
-#: contact_info/models.py:23
+#: contact_info/models.py:17
 msgid "Postal Code"
 msgstr "PLZ"
 
-#: contact_info/models.py:26
+#: contact_info/models.py:20
 msgid "Is Admin Provided"
 msgstr "Bereitgestellt durch Admin"
 
-#: contact_info/models.py:30 contact_info/models.py:41
+#: contact_info/models.py:24 contact_info/models.py:34
 msgid "Locality"
 msgstr "Ort"
 
-#: contact_info/models.py:31
+#: contact_info/models.py:25
 msgid "Localities"
 msgstr "Orte"
 
-#: contact_info/models.py:39
+#: contact_info/models.py:32
 msgid "Line 1"
 msgstr "Zeile 1"
 
-#: contact_info/models.py:40
+#: contact_info/models.py:33
 msgid "Line 2"
 msgstr "Zeile 2"
 
-#: contact_info/models.py:44
+#: contact_info/models.py:38
 msgid "Address"
 msgstr "Adresse"
 
-#: contact_info/models.py:45
+#: contact_info/models.py:39
 msgid "Addresses"
 msgstr "Adressen"
 
-#: contact_info/models.py:53
+#: contact_info/models.py:46
 msgid "IBAN"
 msgstr "IBAN"
 
-#: contact_info/models.py:54
+#: contact_info/models.py:47
 msgid "BIC"
 msgstr "BIC"
 
-#: contact_info/models.py:57
+#: contact_info/models.py:51
 msgid "Bank Account"
 msgstr "Bankkonto"
 
-#: contact_info/models.py:58
+#: contact_info/models.py:52
 msgid "Bank Accounts"
 msgstr "Bankkonten"
 
@@ -140,19 +132,20 @@ msgstr "Kursnummer"
 msgid "Course Type"
 msgstr "Kursart"
 
-#: courses/models.py:34
+#: courses/models.py:34 reimbursements/models/reimbursement.py:43
 msgid "Start Date"
 msgstr "Startdatum"
 
-#: courses/models.py:35
+#: courses/models.py:35 reimbursements/models/reimbursement.py:44
 msgid "End Date"
 msgstr "Enddatum"
 
-#: courses/models.py:36
+#: courses/models.py:36 reimbursements/models/reimbursement.py:42
 msgid "Location"
 msgstr "Ort"
 
-#: courses/models.py:45
+#: courses/models.py:45 reimbursements/models/reimbursement.py:7
+#: reimbursements/models/reimbursement.py:29
 msgid "Course"
 msgstr "Kurs"
 
@@ -176,9 +169,287 @@ msgstr "Sektion"
 msgid "Email"
 msgstr "E-Mail"
 
-#: people/models.py:14
+#: people/models.py:14 people/models.py:22 people/models.py:30
 msgid "Person"
 msgstr "Person"
+
+#: people/models.py:25
+msgid "Person Address"
+msgstr "Persönliche Adresse"
+
+#: people/models.py:26
+msgid "Person Addresses"
+msgstr "Persönliche Adressen"
+
+#: people/models.py:33
+msgid "Person Bank Account"
+msgstr "Persönliches Bankkonto"
+
+#: people/models.py:34
+msgid "Person Bank Accounts"
+msgstr "Persönliche Bankkonten"
+
+#: reimbursements/apps.py:8 reimbursements/models/reimbursement.py:24
+msgid "Reimbursements"
+msgstr "Abrechnungen"
+
+#: reimbursements/models/expenses.py:9
+msgid "Inbound"
+msgstr "Hinfahrt"
+
+#: reimbursements/models/expenses.py:10
+msgid "Outbound"
+msgstr "Rückfahrt"
+
+#: reimbursements/models/expenses.py:11
+msgid "On Site"
+msgstr "Vor Ort"
+
+#: reimbursements/models/expenses.py:14
+msgid "Car"
+msgstr "Auto"
+
+#: reimbursements/models/expenses.py:15
+msgid "Bike"
+msgstr "Fahrrad"
+
+#: reimbursements/models/expenses.py:16
+msgid "Public Transport"
+msgstr "Öffentliche Verkehrsmittel"
+
+#: reimbursements/models/expenses.py:17
+msgid "Public Transport Plan"
+msgstr "Öffentliche Verkehrsmittel Abo"
+
+#: reimbursements/models/expenses.py:23 reimbursements/models/expenses.py:114
+#: reimbursements/models/expenses.py:136
+#: reimbursements/models/reimbursement.py:23
+#: reimbursements/models/reimbursement.py:28
+#: reimbursements/models/reimbursement.py:40
+msgid "Reimbursement"
+msgstr "Abrechnung"
+
+#: reimbursements/models/expenses.py:25
+msgid "Direction"
+msgstr "Richtung"
+
+#: reimbursements/models/expenses.py:26
+msgid "Order"
+msgstr "Reihenfolge"
+
+#: reimbursements/models/expenses.py:27
+msgid "Origin"
+msgstr "Start"
+
+#: reimbursements/models/expenses.py:28
+msgid "Destination"
+msgstr "Ziel"
+
+#: reimbursements/models/expenses.py:29
+msgid "Transport Mode"
+msgstr "Verkehrsmittel"
+
+#: reimbursements/models/expenses.py:31
+msgid "Distance"
+msgstr "Entfernung"
+
+#: reimbursements/models/expenses.py:36
+#, python-format
+msgid "%(direction)s from %(origin)s to %(destination)s"
+msgstr "%(direction)s von %(origin)s nach %(destination)s"
+
+#: reimbursements/models/expenses.py:44 reimbursements/models/expenses.py:55
+#: reimbursements/models/expenses.py:78
+msgid "Transport Expense"
+msgstr "Reiseausgabe"
+
+#: reimbursements/models/expenses.py:45
+msgid "Transport Expenses"
+msgstr "Reiseausgaben"
+
+#: reimbursements/models/expenses.py:50
+msgid "Bahn Card 25"
+msgstr "Bahn Card 25"
+
+#: reimbursements/models/expenses.py:51
+msgid "Bahn Card 50"
+msgstr "Bahn Card 50"
+
+#: reimbursements/models/expenses.py:52
+msgid "No Discount"
+msgstr "Keine Ermäßigung"
+
+#: reimbursements/models/expenses.py:57
+msgid "Price"
+msgstr "Preis"
+
+#: reimbursements/models/expenses.py:58
+msgid "Discount"
+msgstr "Ermäßigung"
+
+#: reimbursements/models/expenses.py:61
+#, python-format
+msgid "Ticket for %(expense)s"
+msgstr "Ticket für %(expense)s"
+
+#: reimbursements/models/expenses.py:64
+msgid "Train Expense"
+msgstr "Zugausgabe"
+
+#: reimbursements/models/expenses.py:65
+msgid "Train Expenses"
+msgstr "Zugausgaben"
+
+#: reimbursements/models/expenses.py:70
+msgid "Combustion"
+msgstr "Verbrenner"
+
+#: reimbursements/models/expenses.py:71
+msgid "Electric"
+msgstr "Elektrisch"
+
+#: reimbursements/models/expenses.py:72
+msgid "Hybrid"
+msgstr "Hybrid"
+
+#: reimbursements/models/expenses.py:80
+msgid "Engine Type"
+msgstr "Antriebsart"
+
+#: reimbursements/models/expenses.py:83
+#, python-format
+msgid "Car Trip for %(expense)s"
+msgstr "Autofahrt für %(expense)s"
+
+#: reimbursements/models/expenses.py:86
+msgid "Car Expense"
+msgstr "Autoausgabe"
+
+#: reimbursements/models/expenses.py:87
+msgid "Car Expenses"
+msgstr "Autoausgaben"
+
+#: reimbursements/models/expenses.py:92
+msgid "Car Trip"
+msgstr "Autofahrt"
+
+#: reimbursements/models/expenses.py:100
+msgid "Passenger"
+msgstr "Mitfahrer*in"
+
+#: reimbursements/models/expenses.py:101
+msgid "Passengers"
+msgstr "Mitfahrer*innen"
+
+#: reimbursements/models/expenses.py:106
+msgid "Full Day"
+msgstr "Voller Tag"
+
+#: reimbursements/models/expenses.py:107
+msgid "Travel Day"
+msgstr "Reisetag"
+
+#: reimbursements/models/expenses.py:108
+msgid "Single Day"
+msgstr "Einzelner Tag"
+
+#: reimbursements/models/expenses.py:116 reimbursements/models/expenses.py:138
+msgid "Date"
+msgstr "Datum"
+
+#: reimbursements/models/expenses.py:117
+msgid "Absence"
+msgstr "Abwesenheit"
+
+#: reimbursements/models/expenses.py:118
+msgid "Breakfast"
+msgstr "Frühstück"
+
+#: reimbursements/models/expenses.py:119
+msgid "Lunch"
+msgstr "Mittagessen"
+
+#: reimbursements/models/expenses.py:120
+msgid "Dinner"
+msgstr "Abendessen"
+
+#: reimbursements/models/expenses.py:123
+#, python-format
+msgid "Food Expense for %(date)s"
+msgstr "Verpflegungsausgaben für %(date)s"
+
+#: reimbursements/models/expenses.py:127
+msgid "Food Expense"
+msgstr "Verpflegungsausgabe"
+
+#: reimbursements/models/expenses.py:128
+msgid "Food Expenses"
+msgstr "Verpflegungsausgaben"
+
+#: reimbursements/models/expenses.py:139
+#: reimbursements/models/reimbursement.py:41
+msgid "Purpose"
+msgstr "Zweck"
+
+#: reimbursements/models/expenses.py:140
+msgid "Amount"
+msgstr "Betrag"
+
+#: reimbursements/models/expenses.py:147
+msgid "Generic Expense"
+msgstr "Allgemeine Ausgabe"
+
+#: reimbursements/models/expenses.py:148
+msgid "Generic Expenses"
+msgstr "Allgemeine Ausgaben"
+
+#: reimbursements/models/reimbursement.py:8
+msgid "Committee"
+msgstr "Gremium"
+
+#: reimbursements/models/reimbursement.py:10
+msgid "Type"
+msgstr "Typ"
+
+#: reimbursements/models/reimbursement.py:11
+msgid "Participant"
+msgstr "Teilnehmer*in"
+
+#: reimbursements/models/reimbursement.py:12
+msgid "Note"
+msgstr "Bemerkung"
+
+#: reimbursements/models/reimbursement.py:13
+msgid "Created At"
+msgstr "Erstellt am"
+
+#: reimbursements/models/reimbursement.py:16
+#, python-format
+msgid "%(type)s reimbursement for %(participant)s at %(created_at)s"
+msgstr "%(type)s-Erstattung für %(participant)s am %(created_at)s"
+
+#: reimbursements/models/reimbursement.py:32
+#, python-format
+msgid "Course details for %(reimbursement)s"
+msgstr "Kursabrechnungen für %(reimbursement)s"
+
+#: reimbursements/models/reimbursement.py:35
+msgid "Course Reimbursement"
+msgstr "Kursabrechnung"
+
+#: reimbursements/models/reimbursement.py:36
+msgid "Course Reimbursements"
+msgstr "Kursabrechnungen"
+
+#: reimbursements/models/reimbursement.py:47
+#, python-format
+msgid "Travel details for %(reimbursement)s"
+msgstr "Reisedaten für %(reimbursement)s"
+
+#: reimbursements/models/reimbursement.py:50
+#: reimbursements/models/reimbursement.py:51
+msgid "Travel Details"
+msgstr "Reisedaten"
 
 #: sections/apps.py:7 sections/models.py:39
 msgid "Sections"
