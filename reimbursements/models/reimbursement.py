@@ -12,6 +12,22 @@ class Reimbursement(models.Model):
     note = models.TextField(_('Note'), blank=True)
     created_at = models.DateTimeField(_('Created At'), auto_now_add=True)
 
+    @property
+    def transport_total(self):
+        return sum([expense.amount for expense in self.transport.all()])
+    
+    @property
+    def food_total(self):
+        return sum([expense.amount for expense in self.food.all()])
+    
+    @property
+    def generic_total(self):
+        return sum([expense.amount for expense in self.generic.all()])
+    
+    @property
+    def total(self):
+        return self.transprot_total + self.food_total + self.generic_total
+
     def __str__(self) -> str:
         return _("%(type)s reimbursement for %(participant)s at %(created_at)s") % {
             'type': self.Type(self.type).label,

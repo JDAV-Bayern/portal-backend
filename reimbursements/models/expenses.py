@@ -1,3 +1,4 @@
+from decimal import Decimal
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -31,6 +32,40 @@ class TransportExpense(models.Model):
         _("Distance"), max_digits=10, decimal_places=2, null=True, blank=True
     )
 
+    @property
+    def amount(self):
+        if self.reimbursement.type == Reimbursement.Type.COURSE:
+            if self.mode == self.Mode.CAR:
+                num_passengers = 1 + self.car_trip.passengers.count()
+                return self.distance * Decimal(max(num_passengers, 6) * 0.05)
+            elif self.mode == self.Mode.PUBLIC:
+                if self.ticket.discount == Ticket.Discount.BAHN_CARD_25:
+                    return self.ticket.price * Decimal(1.05)
+                elif self.ticket.discount == Ticket.Discount.NO_DISCOUNT:
+                    return self.ticket.price * Decimal(1.1)
+                return self.ticket.price
+            elif self.mode == self.Mode.BIKE:
+                return self.distance * Decimal(0.13)
+            elif self.mode == self.Mode.PLAN:
+                return Decimal(12.25)
+        elif self.reimbursement.type == Reimbursement.Type.COMMITTEE:
+            if self.mode == self.Mode.CAR:
+                num_passengers = 1 + self.car_trip.passengers.count()
+                if num_passengers > 3:
+                    return self.distance * Decimal(0.3)
+                if num_passengers > 2:
+                    return self.distance * Decimal(0.27)
+                return self.distance * Decimal(0.2)
+            elif self.mode == self.Mode.PUBLIC:
+                return self.ticket.price
+            elif self.mode == self.Mode.BIKE:
+                return self.distance * Decimal(0.13)
+            elif self.mode == self.Mode.PLAN:
+                return Decimal(12.25)
+        
+        return Decimal(0)
+        
+
     def __str__(self) -> str:
         direction = self.Direction(self.direction).label
         return _("%(direction)s from %(origin)s to %(destination)s") % {
@@ -47,8 +82,8 @@ class TransportExpense(models.Model):
 
 class Ticket(models.Model):
     class Discount(models.TextChoices):
-        BAHN_CARD_25 = "BC25", _("Bahn Card 25")
-        BAHN_CARD_50 = "BC50", _("Bahn Card 50")
+        BAHN_CARD_25 = "BC25", _("BahnCard 25")
+        BAHN_CARD_50 = "BC50", _("BahnCard 50")
         NO_DISCOUNT = "none", _("No Discount")
 
     expense = models.OneToOneField(
@@ -118,6 +153,23 @@ class FoodExpense(models.Model):
     breakfast = models.BooleanField(_("Breakfast"))
     lunch = models.BooleanField(_("Lunch"))
     dinner = models.BooleanField(_("Dinner"))
+
+    @property
+    def amount(self):
+        amount = 14
+        if self.absence == self.Absence.FULL_DAY:
+            amount = 28
+        if self.breakfast:
+            amount -= 5.6
+        if self.lunch:
+            amount -= 11.2
+        if self.dinner:
+            amount -= 11.2
+        return Decimal(max(amount, 0))
+    
+    @property
+    def meals(self):
+        return [self.breakfast, self.lunch, self.dinner]
 
     def __str__(self) -> str:
         return _("Food Expense for %(date)s") % {"date": self.date}
