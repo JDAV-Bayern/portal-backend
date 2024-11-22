@@ -12,4 +12,4 @@ class CountrySerializer(serializers.ModelSerializer):
 class LocalitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Locality
-        fields = ['postal_code', 'name', 'country']
+        fields = ['postal_code', 'name', 'country_id']

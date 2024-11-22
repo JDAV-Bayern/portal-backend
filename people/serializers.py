@@ -7,11 +7,11 @@ from people.models import Person, PersonAddress, PersonBankAccount
 class AddressSerializer(serializers.ModelSerializer):
     postal_code = serializers.CharField(source='locality.postal_code')
     locality = serializers.CharField(source='locality.name')
-    country = serializers.PrimaryKeyRelatedField(source='locality.country', queryset=Country.objects.all())
+    country_id = serializers.PrimaryKeyRelatedField(source='locality.country', queryset=Country.objects.all())
 
     class Meta:
         model = PersonAddress
-        fields = ['line1', 'line2', 'postal_code', 'locality', 'country']
+        fields = ['line1', 'line2', 'postal_code', 'locality', 'country_id']
 
 
 class BankAccountSerializer(serializers.ModelSerializer):
@@ -26,4 +26,4 @@ class PersonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Person
-        fields = ['given_name', 'family_name', 'section', 'email', 'address', 'bank_account']
+        fields = ['given_name', 'family_name', 'section_id', 'email', 'address', 'bank_account']
