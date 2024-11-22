@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-09 23:27+0200\n"
+"POT-Creation-Date: 2024-11-22 15:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgid "Country"
 msgstr "Land"
 
 #: contact_info/models.py:6 contact_info/models.py:18 courses/models.py:32
-#: reimbursements/models/expenses.py:94 sections/models.py:16
+#: reimbursements/models/expenses.py:129 sections/models.py:16
 #: sections/models.py:29
 msgid "Name"
 msgstr "Name"
@@ -132,20 +132,20 @@ msgstr "Kursnummer"
 msgid "Course Type"
 msgstr "Kursart"
 
-#: courses/models.py:34 reimbursements/models/reimbursement.py:43
+#: courses/models.py:34 reimbursements/models/reimbursement.py:59
 msgid "Start Date"
 msgstr "Startdatum"
 
-#: courses/models.py:35 reimbursements/models/reimbursement.py:44
+#: courses/models.py:35 reimbursements/models/reimbursement.py:60
 msgid "End Date"
 msgstr "Enddatum"
 
-#: courses/models.py:36 reimbursements/models/reimbursement.py:42
+#: courses/models.py:36 reimbursements/models/reimbursement.py:58
 msgid "Location"
 msgstr "Ort"
 
 #: courses/models.py:45 reimbursements/models/reimbursement.py:7
-#: reimbursements/models/reimbursement.py:29
+#: reimbursements/models/reimbursement.py:45
 msgid "Course"
 msgstr "Kurs"
 
@@ -189,217 +189,236 @@ msgstr "Persönliches Bankkonto"
 msgid "Person Bank Accounts"
 msgstr "Persönliche Bankkonten"
 
-#: reimbursements/apps.py:8 reimbursements/models/reimbursement.py:24
+#: reimbursements/apps.py:8 reimbursements/models/reimbursement.py:40
 msgid "Reimbursements"
 msgstr "Abrechnungen"
 
-#: reimbursements/models/expenses.py:9
+#: reimbursements/models/expenses.py:10
 msgid "Inbound"
 msgstr "Hinfahrt"
 
-#: reimbursements/models/expenses.py:10
+#: reimbursements/models/expenses.py:11
 msgid "Outbound"
 msgstr "Rückfahrt"
 
-#: reimbursements/models/expenses.py:11
+#: reimbursements/models/expenses.py:12
 msgid "On Site"
 msgstr "Vor Ort"
 
-#: reimbursements/models/expenses.py:14
+#: reimbursements/models/expenses.py:15
 msgid "Car"
 msgstr "Auto"
 
-#: reimbursements/models/expenses.py:15
+#: reimbursements/models/expenses.py:16
 msgid "Bike"
 msgstr "Fahrrad"
 
-#: reimbursements/models/expenses.py:16
+#: reimbursements/models/expenses.py:17
 msgid "Public Transport"
 msgstr "Öffentliche Verkehrsmittel"
 
-#: reimbursements/models/expenses.py:17
+#: reimbursements/models/expenses.py:18
 msgid "Public Transport Plan"
 msgstr "Öffentliche Verkehrsmittel Abo"
 
-#: reimbursements/models/expenses.py:23 reimbursements/models/expenses.py:114
-#: reimbursements/models/expenses.py:136
-#: reimbursements/models/reimbursement.py:23
-#: reimbursements/models/reimbursement.py:28
-#: reimbursements/models/reimbursement.py:40
+#: reimbursements/models/expenses.py:24 reimbursements/models/expenses.py:149
+#: reimbursements/models/expenses.py:188
+#: reimbursements/models/reimbursement.py:39
+#: reimbursements/models/reimbursement.py:44
+#: reimbursements/models/reimbursement.py:56
 msgid "Reimbursement"
 msgstr "Abrechnung"
 
-#: reimbursements/models/expenses.py:25
+#: reimbursements/models/expenses.py:26
+#: templates/admin/reimbursements/reimbursement/change_form.html:12
 msgid "Direction"
 msgstr "Richtung"
 
-#: reimbursements/models/expenses.py:26
+#: reimbursements/models/expenses.py:27
 msgid "Order"
 msgstr "Reihenfolge"
 
-#: reimbursements/models/expenses.py:27
+#: reimbursements/models/expenses.py:28
+#: templates/admin/reimbursements/reimbursement/change_form.html:13
 msgid "Origin"
 msgstr "Start"
 
-#: reimbursements/models/expenses.py:28
+#: reimbursements/models/expenses.py:29
+#: templates/admin/reimbursements/reimbursement/change_form.html:14
 msgid "Destination"
 msgstr "Ziel"
 
-#: reimbursements/models/expenses.py:29
+#: reimbursements/models/expenses.py:30
+#: templates/admin/reimbursements/reimbursement/change_form.html:15
 msgid "Transport Mode"
 msgstr "Verkehrsmittel"
 
-#: reimbursements/models/expenses.py:31
+#: reimbursements/models/expenses.py:32
+#: templates/admin/reimbursements/reimbursement/change_form.html:16
 msgid "Distance"
 msgstr "Entfernung"
 
-#: reimbursements/models/expenses.py:36
+#: reimbursements/models/expenses.py:71
 #, python-format
 msgid "%(direction)s from %(origin)s to %(destination)s"
 msgstr "%(direction)s von %(origin)s nach %(destination)s"
 
-#: reimbursements/models/expenses.py:44 reimbursements/models/expenses.py:55
-#: reimbursements/models/expenses.py:78
+#: reimbursements/models/expenses.py:79 reimbursements/models/expenses.py:90
+#: reimbursements/models/expenses.py:113
 msgid "Transport Expense"
 msgstr "Reiseausgabe"
 
-#: reimbursements/models/expenses.py:45
+#: reimbursements/models/expenses.py:80
+#: templates/admin/reimbursements/reimbursement/change_form.html:8
 msgid "Transport Expenses"
 msgstr "Reiseausgaben"
 
-#: reimbursements/models/expenses.py:50
-msgid "Bahn Card 25"
-msgstr "Bahn Card 25"
+#: reimbursements/models/expenses.py:85
+msgid "BahnCard 25"
+msgstr "BahnCard 25"
 
-#: reimbursements/models/expenses.py:51
-msgid "Bahn Card 50"
-msgstr "Bahn Card 50"
+#: reimbursements/models/expenses.py:86
+msgid "BahnCard 50"
+msgstr "BahnCard 50"
 
-#: reimbursements/models/expenses.py:52
+#: reimbursements/models/expenses.py:87
 msgid "No Discount"
 msgstr "Keine Ermäßigung"
 
-#: reimbursements/models/expenses.py:57
+#: reimbursements/models/expenses.py:92
 msgid "Price"
 msgstr "Preis"
 
-#: reimbursements/models/expenses.py:58
+#: reimbursements/models/expenses.py:93
 msgid "Discount"
 msgstr "Ermäßigung"
 
-#: reimbursements/models/expenses.py:61
+#: reimbursements/models/expenses.py:96
 #, python-format
 msgid "Ticket for %(expense)s"
 msgstr "Ticket für %(expense)s"
 
-#: reimbursements/models/expenses.py:64
+#: reimbursements/models/expenses.py:99
 msgid "Train Expense"
 msgstr "Zugausgabe"
 
-#: reimbursements/models/expenses.py:65
+#: reimbursements/models/expenses.py:100
 msgid "Train Expenses"
 msgstr "Zugausgaben"
 
-#: reimbursements/models/expenses.py:70
+#: reimbursements/models/expenses.py:105
 msgid "Combustion"
 msgstr "Verbrenner"
 
-#: reimbursements/models/expenses.py:71
+#: reimbursements/models/expenses.py:106
 msgid "Electric"
 msgstr "Elektrisch"
 
-#: reimbursements/models/expenses.py:72
+#: reimbursements/models/expenses.py:107
 msgid "Hybrid"
 msgstr "Hybrid"
 
-#: reimbursements/models/expenses.py:80
+#: reimbursements/models/expenses.py:115
 msgid "Engine Type"
 msgstr "Antriebsart"
 
-#: reimbursements/models/expenses.py:83
+#: reimbursements/models/expenses.py:118
 #, python-format
 msgid "Car Trip for %(expense)s"
 msgstr "Autofahrt für %(expense)s"
 
-#: reimbursements/models/expenses.py:86
+#: reimbursements/models/expenses.py:121
 msgid "Car Expense"
 msgstr "Autoausgabe"
 
-#: reimbursements/models/expenses.py:87
+#: reimbursements/models/expenses.py:122
 msgid "Car Expenses"
 msgstr "Autoausgaben"
 
-#: reimbursements/models/expenses.py:92
+#: reimbursements/models/expenses.py:127
 msgid "Car Trip"
 msgstr "Autofahrt"
 
-#: reimbursements/models/expenses.py:100
+#: reimbursements/models/expenses.py:135
 msgid "Passenger"
 msgstr "Mitfahrer*in"
 
-#: reimbursements/models/expenses.py:101
+#: reimbursements/models/expenses.py:136
+#: templates/admin/reimbursements/reimbursement/change_form.html:33
 msgid "Passengers"
 msgstr "Mitfahrer*innen"
 
-#: reimbursements/models/expenses.py:106
+#: reimbursements/models/expenses.py:141
 msgid "Full Day"
 msgstr "Voller Tag"
 
-#: reimbursements/models/expenses.py:107
+#: reimbursements/models/expenses.py:142
 msgid "Travel Day"
 msgstr "Reisetag"
 
-#: reimbursements/models/expenses.py:108
+#: reimbursements/models/expenses.py:143
 msgid "Single Day"
 msgstr "Einzelner Tag"
 
-#: reimbursements/models/expenses.py:116 reimbursements/models/expenses.py:138
+#: reimbursements/models/expenses.py:151 reimbursements/models/expenses.py:190
+#: templates/admin/reimbursements/reimbursement/change_form.html:63
+#: templates/admin/reimbursements/reimbursement/change_form.html:105
 msgid "Date"
 msgstr "Datum"
 
-#: reimbursements/models/expenses.py:117
+#: reimbursements/models/expenses.py:152
+#: templates/admin/reimbursements/reimbursement/change_form.html:64
 msgid "Absence"
 msgstr "Abwesenheit"
 
-#: reimbursements/models/expenses.py:118
+#: reimbursements/models/expenses.py:153
+#: templates/admin/reimbursements/reimbursement/change_form.html:65
 msgid "Breakfast"
 msgstr "Frühstück"
 
-#: reimbursements/models/expenses.py:119
+#: reimbursements/models/expenses.py:154
+#: templates/admin/reimbursements/reimbursement/change_form.html:66
 msgid "Lunch"
 msgstr "Mittagessen"
 
-#: reimbursements/models/expenses.py:120
+#: reimbursements/models/expenses.py:155
+#: templates/admin/reimbursements/reimbursement/change_form.html:67
 msgid "Dinner"
 msgstr "Abendessen"
 
-#: reimbursements/models/expenses.py:123
+#: reimbursements/models/expenses.py:175
 #, python-format
 msgid "Food Expense for %(date)s"
 msgstr "Verpflegungsausgaben für %(date)s"
 
-#: reimbursements/models/expenses.py:127
+#: reimbursements/models/expenses.py:179
 msgid "Food Expense"
 msgstr "Verpflegungsausgabe"
 
-#: reimbursements/models/expenses.py:128
+#: reimbursements/models/expenses.py:180
+#: templates/admin/reimbursements/reimbursement/change_form.html:59
+#: templates/admin/reimbursements/reimbursement/change_form.html:101
 msgid "Food Expenses"
 msgstr "Verpflegungsausgaben"
 
-#: reimbursements/models/expenses.py:139
-#: reimbursements/models/reimbursement.py:41
+#: reimbursements/models/expenses.py:191
+#: reimbursements/models/reimbursement.py:57
+#: templates/admin/reimbursements/reimbursement/change_form.html:106
 msgid "Purpose"
 msgstr "Zweck"
 
-#: reimbursements/models/expenses.py:140
+#: reimbursements/models/expenses.py:192
+#: templates/admin/reimbursements/reimbursement/change_form.html:18
+#: templates/admin/reimbursements/reimbursement/change_form.html:68
+#: templates/admin/reimbursements/reimbursement/change_form.html:107
 msgid "Amount"
 msgstr "Betrag"
 
-#: reimbursements/models/expenses.py:147
+#: reimbursements/models/expenses.py:199
 msgid "Generic Expense"
 msgstr "Allgemeine Ausgabe"
 
-#: reimbursements/models/expenses.py:148
+#: reimbursements/models/expenses.py:200
 msgid "Generic Expenses"
 msgstr "Allgemeine Ausgaben"
 
@@ -423,31 +442,31 @@ msgstr "Bemerkung"
 msgid "Created At"
 msgstr "Erstellt am"
 
-#: reimbursements/models/reimbursement.py:16
+#: reimbursements/models/reimbursement.py:32
 #, python-format
 msgid "%(type)s reimbursement for %(participant)s at %(created_at)s"
 msgstr "%(type)s-Erstattung für %(participant)s am %(created_at)s"
 
-#: reimbursements/models/reimbursement.py:32
+#: reimbursements/models/reimbursement.py:48
 #, python-format
 msgid "Course details for %(reimbursement)s"
 msgstr "Kursabrechnungen für %(reimbursement)s"
 
-#: reimbursements/models/reimbursement.py:35
+#: reimbursements/models/reimbursement.py:51
 msgid "Course Reimbursement"
 msgstr "Kursabrechnung"
 
-#: reimbursements/models/reimbursement.py:36
+#: reimbursements/models/reimbursement.py:52
 msgid "Course Reimbursements"
 msgstr "Kursabrechnungen"
 
-#: reimbursements/models/reimbursement.py:47
+#: reimbursements/models/reimbursement.py:63
 #, python-format
 msgid "Travel details for %(reimbursement)s"
 msgstr "Reisedaten für %(reimbursement)s"
 
-#: reimbursements/models/reimbursement.py:50
-#: reimbursements/models/reimbursement.py:51
+#: reimbursements/models/reimbursement.py:66
+#: reimbursements/models/reimbursement.py:67
 msgid "Travel Details"
 msgstr "Reisedaten"
 
@@ -482,3 +501,25 @@ msgstr "Verbände"
 #: sections/models.py:28
 msgid "Section Number"
 msgstr "Sektionsnummer"
+
+#: templates/admin/reimbursements/reimbursement/change_form.html:17
+msgid "Details"
+msgstr "Details"
+
+#: templates/admin/reimbursements/reimbursement/change_form.html:38
+msgid "with"
+msgstr "mit"
+
+#: templates/admin/reimbursements/reimbursement/change_form.html:47
+#: templates/admin/reimbursements/reimbursement/change_form.html:90
+#: templates/admin/reimbursements/reimbursement/change_form.html:120
+msgid "Subtotal"
+msgstr "Zwischensumme"
+
+#: templates/admin/reimbursements/reimbursement/change_form.html:79
+msgid "Yes"
+msgstr "Ja"
+
+#: templates/admin/reimbursements/reimbursement/change_form.html:81
+msgid "No"
+msgstr "Nein"

@@ -1,0 +1,135 @@
+{% extends "admin/change_form.html" %}
+{% load static i18n reimbursement_extras %}
+
+{% block after_related_objects %}
+
+{% if original.transport.exists %}
+<div class="inline-group">
+  <div class="tabular inline-related">
+    <fieldset class="module">
+      <h2 class="inline-heading">{% translate "Transport Expenses" %}</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>{% translate "Direction" %}</th>
+            <th>{% translate "Origin" %}</th>
+            <th>{% translate "Destination" %}</th>
+            <th>{% translate "Transport Mode" %}</th>
+            <th>{% translate "Distance" %}</th>
+            <th>{% translate "Details" %}</th>
+            <th>{% translate "Amount" %}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in original.transport.all %}
+            <tr>
+              <td>{% translate item.get_direction_display %}</td>
+              <td>{{ item.origin }}</td>
+              <td>{{ item.destination }}</td>
+              <td>{% translate item.get_mode_display %}</td>
+              <td>{{ item.distance|distance }}</td>
+              <td>
+                {% if item.mode == 'car' %}
+                  {% translate item.car_trip.get_engine_display %}
+                  {% if item.car_trip.passengers.exists %}
+                    &ndash; {% translate "Passengers" %}:
+                    {{ item.car_trip.passengers.all|join:", " }}
+                  {% endif %}
+                {% elif item.mode == 'public' %}
+                  {% if item.ticket.discount != 'none' %}
+                    {{ item.ticket.price|currency }} {% translate "with" %}
+                    {% translate item.ticket.get_discount_display %}
+                  {% endif %}
+                {% endif %}
+              </td>
+              <td>{{ item.amount|currency }}</td>
+            </tr>
+          {% endfor %}
+          <tr class="add-row">
+            <td colspan="6">{% translate "Subtotal" %}</td>
+            <td>{{ original.transport_total|currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+  </div>
+</div>
+{% endif %}
+
+{% if original.food.exists %}
+<div class="inline-group">
+  <div class="tabular inline-related">
+    <fieldset class="module">
+      <h2 class="inline-heading">{% translate "Food Expenses" %}</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>{% translate "Date" %}</th>
+            <th>{% translate "Absence" %}</th>
+            <th>{% translate "Breakfast" %}</th>
+            <th>{% translate "Lunch" %}</th>
+            <th>{% translate "Dinner" %}</th>
+            <th>{% translate "Amount" %}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in original.food.all %}
+            <tr>
+              <td>{{ item.date|date:"SHORT_DATE_FORMAT" }}</td>
+              <td>{% translate item.get_absence_display %}</td>
+              {% for meal in item.meals %}
+                <td>
+                  {% if meal %}
+                    <img src="{% static 'admin/img/icon-yes.svg' %}" alt="{% translate "Yes" %}" />
+                  {% else %}
+                    <img src="{% static 'admin/img/icon-no.svg' %}" alt="{% translate "No" %}" />
+                  {% endif %}
+                </td>
+              {% endfor %}
+              <td>{{ item.amount|currency }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tr class="add-row">
+          <td colspan="5">{% translate "Subtotal" %}</td>
+          <td>{{ original.food_total|currency }}</td>
+        </tr>
+      </table>
+    </fieldset>
+  </div>
+</div>
+{% endif %}
+
+{% if original.generic.exists %}
+<div class="inline-group">
+  <div class="tabular inline-related">
+    <fieldset class="module">
+      <h2 class="inline-heading">{% translate "Food Expenses" %}</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>{% translate "Date" %}</th>
+            <th>{% translate "Purpose" %}</th>
+            <th>{% translate "Amount" %}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in original.generic.all %}
+            <tr>
+              <td>{{ item.date|date:"SHORT_DATE_FORMAT" }}</td>
+              <td>{{ item.purpose }}</td>
+              <td>{{ item.amount|currency }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tr class="add-row">
+          <td colspan="2">{% translate "Subtotal" %}</td>
+          <td>{{ original.generic_total|currency }}</td>
+        </tr>
+      </table>
+    </fieldset>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}
