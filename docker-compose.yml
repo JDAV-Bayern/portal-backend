@@ -1,0 +1,27 @@
+# Docker compose for the development environment
+services:
+  db:
+    image: postgres:17-alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: jdav
+      POSTGRES_PASSWORD: django-insecure
+
+  backend:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 8000:8000
+    environment:
+      DJANGO_SETTINGS_MODULE: portal_jdav_bayern.settings
+      SECRET_KEY: django-insecure
+      DB_HOST: db
+      DB_PASSWORD: django-insecure
+    depends_on:
+      - db
+
+volumes:
+  db_data:

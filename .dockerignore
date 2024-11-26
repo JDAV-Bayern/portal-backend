@@ -1,3 +1,13 @@
+# Git repository
+.git
+.gitignore
+
+# GitHub workflows
+.github
+
+# Development docker compose project
+docker-compose.yml
+
 data/*
 
 ## Beginning of https://github.com/github/gitignore/blob/main/Python.gitignore
