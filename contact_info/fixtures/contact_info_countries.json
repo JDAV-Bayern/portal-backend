@@ -1,0 +1,23 @@
+[
+{
+  "model": "contact_info.country",
+  "pk": 1,
+  "fields": {
+    "name": "Deutschland"
+  }
+},
+{
+  "model": "contact_info.country",
+  "pk": 2,
+  "fields": {
+    "name": "Österreich"
+  }
+},
+{
+  "model": "contact_info.country",
+  "pk": 3,
+  "fields": {
+    "name": "Schweiz"
+  }
+}
+]

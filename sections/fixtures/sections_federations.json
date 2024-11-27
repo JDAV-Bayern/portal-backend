@@ -1,0 +1,146 @@
+[
+{
+  "model": "sections.federation",
+  "pk": 1,
+  "fields": {
+    "type": 0,
+    "name": "JDAV",
+    "parent": null
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 2,
+  "fields": {
+    "type": 1,
+    "name": "Baden-Württemberg",
+    "parent": 1
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 3,
+  "fields": {
+    "type": 1,
+    "name": "Bayern",
+    "parent": 1
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 4,
+  "fields": {
+    "type": 1,
+    "name": "Hessen",
+    "parent": 1
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 5,
+  "fields": {
+    "type": 1,
+    "name": "Nord",
+    "parent": 1
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 6,
+  "fields": {
+    "type": 1,
+    "name": "Nordost",
+    "parent": 1
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 7,
+  "fields": {
+    "type": 1,
+    "name": "Nordrhein-Westfalen",
+    "parent": 1
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 8,
+  "fields": {
+    "type": 1,
+    "name": "Rheinland-Pfalz/Saarland",
+    "parent": 1
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 9,
+  "fields": {
+    "type": 1,
+    "name": "Sachsen",
+    "parent": 1
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 10,
+  "fields": {
+    "type": 1,
+    "name": "Sachsen-Anhalt",
+    "parent": 1
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 11,
+  "fields": {
+    "type": 1,
+    "name": "Thüringen",
+    "parent": 1
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 12,
+  "fields": {
+    "type": 2,
+    "name": "München",
+    "parent": 3
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 13,
+  "fields": {
+    "type": 2,
+    "name": "Nordbayern",
+    "parent": 3
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 14,
+  "fields": {
+    "type": 2,
+    "name": "Schwaben",
+    "parent": 3
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 15,
+  "fields": {
+    "type": 2,
+    "name": "Westliches Oberbayern",
+    "parent": 3
+  }
+},
+{
+  "model": "sections.federation",
+  "pk": 16,
+  "fields": {
+    "type": 2,
+    "name": "Östliches Oberbayern/Niederbayern",
+    "parent": 3
+  }
+}
+]
