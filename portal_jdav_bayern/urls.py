@@ -15,10 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
+from django.urls import include, path, reverse
+from django.views import View
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 from portal_jdav_bayern import settings
+from portal_jdav_bayern.views import admin_permission_denied
+
+class OIDCAdminLoginRedirect(View):
+    def get(self, request, **kwargs):
+        return HttpResponseRedirect(
+            reverse('oidc_authentication_init') + (
+                '?next={}'.format(request.GET['next']) if 'next' in request.GET else ''
+            )
+        )
+
 
 
 urlpatterns = [
@@ -26,6 +39,9 @@ urlpatterns = [
     path('api/', include('sections.urls')),
     path('api/', include('courses.urls')),
     path('api/', include('reimbursements.urls')),
+    path("oidc/", include("mozilla_django_oidc.urls")),
+    path('admin/login/', OIDCAdminLoginRedirect.as_view()),
+    path('permission-denied', admin_permission_denied, name='admin_permission_denied'),
     path('admin/', admin.site.urls),
 ]
 
