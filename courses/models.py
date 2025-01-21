@@ -9,7 +9,7 @@ class CourseYear(models.Model):
         return str(self.year)
     
     class Meta:
-        ordering = ['year']
+        ordering = ['-year']
         verbose_name = _('Course Year')
         verbose_name_plural = _('Course Years')
 
@@ -41,7 +41,7 @@ class Course(models.Model):
         return (self.number + ' ' if self.number else '') + self.name
     
     class Meta:
-        ordering = ['federation', 'start_date', 'number']
+        ordering = ['federation', '-end_date', '-number']
         verbose_name = _('Course')
         verbose_name_plural = _('Courses')
 
