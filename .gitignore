@@ -1,5 +1,7 @@
 data/*
 
+**/.DS_Store
+
 ## Beginning of https://github.com/github/gitignore/blob/main/Python.gitignore
 
 # Byte-compiled / optimized / DLL files
